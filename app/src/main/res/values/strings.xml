@@ -1,11 +1,8 @@
 <resources>
-    <string name="app_name">Login_Register</string>
-    <string name="login">Login</string>
-    <string name="email">email</string>
-    <string name="password">password</string>
-    <string name="register">register</string>
-    <string name="confirm_password">confirm password</string>
-    <string name="click_to_login">Click to login</string>
-    <string name="click_to_register">Click to register</string>
-    <string name="logout">Logout</string>
+    <string name="app_name">LoginScreen</string>
+    <string name="Login" />
+    <string name="forgot_password"><a href="">Forgot Password</a></string>
+    <string name="or_sign_up"><a href="">Create your account </a></string>
+    <string name="already_have_an_account_log_in">Already have an account?<a href=""> Log in</a></string>
+    <string name="reset_your_password"><a href="">Reset your password?</a></string>
 </resources>

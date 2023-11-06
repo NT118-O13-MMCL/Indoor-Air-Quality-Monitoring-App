@@ -13,5 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Login_Register"
+rootProject.name = "LoginScreen"
 include(":app")
+ 
