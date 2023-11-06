@@ -142,6 +142,13 @@ public class SignUp_Screen extends AppCompatActivity {
                                                 });
                                             }
 
+                                            if (redTextElements.isEmpty() && helperTextElement != null)
+                                                runOnUiThread(new Runnable() {
+                                                    public void run() {
+                                                        Toast.makeText(getApplicationContext(), "Đăng ký thành công", Toast.LENGTH_SHORT).show();
+                                                    }
+                                                });
+
                                         }
 
                                         public void onFailure(Call call, IOException e) {
