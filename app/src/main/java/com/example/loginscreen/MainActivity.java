@@ -1,15 +1,20 @@
 package com.example.loginscreen;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import android.text.InputType;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.view.MenuItem;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.widget.Toolbar;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
@@ -54,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
                         .add("password", password)
                         .add("grant_type", "password")
                         .build();
-
 
 
                 Request request = new Request.Builder()
@@ -102,17 +106,18 @@ public class MainActivity extends AppCompatActivity {
 
                                     }
                                 });
-                            }
-                            else {
+                            } else {
                                 runOnUiThread(new Runnable() {
                                     public void run() {
                                         Toast.makeText(MainActivity.this, jsonObject.get("error_description").getAsString(), Toast.LENGTH_SHORT).show();
                                     }
                                 });
 
-                            };
+                            }
+                            ;
 
-                        };
+                        }
+                        ;
                     }
 
                     public void onFailure(Call call, IOException e) {
@@ -139,6 +144,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, HomePage_Screen.class);
+                startActivity(intent);
+            }
+        });
+
+        btn_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, DashBoard.class);
                 startActivity(intent);
             }
         });
