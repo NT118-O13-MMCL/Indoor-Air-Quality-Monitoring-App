@@ -24,16 +24,6 @@
             android:layout_height="120dp"
             android:layout_margin="30dp"
             android:background="@drawable/weatherapp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            android:fontFamily="sans-serif-medium"
-            android:onClick="redirectToSignUp"
-            android:text="Indoor Air Quality Monitoring"
-            android:textSize="18sp"
-            android:textStyle="bold" />
     </LinearLayout>
 
     <androidx.cardview.widget.CardView
@@ -54,7 +44,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Welcome"
-                android:textColor="@color/Primary_Color"
+                android:textColor="@color/black"
                 android:textSize="32sp"
                 android:textStyle="bold" />
 
@@ -98,6 +88,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableEnd="@drawable/password_ic"
+                android:clickable="true"
                 android:inputType="textPassword" />
 
             <RelativeLayout
@@ -134,15 +125,17 @@
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:text="Back"
-                    app:cornerRadius="10dp" />
+                    android:backgroundTint="@color/black"
+                    app:cornerRadius="100dp" />
 
                 <Button
                     android:id="@+id/btn_login"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:text="Login"
-                    app:cornerRadius="10dp" />
+                    android:backgroundTint="@color/black"
+                    android:text="Sign in"
+                    app:cornerRadius="100dp" />
 
 
             </RelativeLayout>

@@ -4,5 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="blue">#287BDD</color>
     <color name="Primary_Color">#5E35B1</color>
-    <color name="Secondary_Color">#673AB7</color>
+    <color name="Secondary_Color">#7A55BC</color>
+    <color name="lightBlue">#8BDAE4</color>
+    <color name="Pink">#FFC5F3</color>
 </resources>
