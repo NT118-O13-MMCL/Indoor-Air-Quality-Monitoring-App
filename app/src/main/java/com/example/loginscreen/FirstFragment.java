@@ -23,7 +23,6 @@ public class FirstFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
 
         View view = inflater.inflate(R.layout.fragment_first, container, false);
 
@@ -40,7 +39,6 @@ public class FirstFragment extends Fragment {
         if (getActivity() instanceof AppCompatActivity) {
             AppCompatActivity activity = (AppCompatActivity) getActivity();
 
-            // Đặt tiêu đề cho ActionBar
             if (activity.getSupportActionBar() != null) {
                 activity.getSupportActionBar().setTitle("Home");
             }

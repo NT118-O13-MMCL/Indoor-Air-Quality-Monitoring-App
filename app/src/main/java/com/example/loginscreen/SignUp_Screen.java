@@ -2,7 +2,6 @@ package com.example.loginscreen;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -134,7 +133,7 @@ public class SignUp_Screen extends AppCompatActivity {
                                                 });
                                             }
 
-                                            if (helperTextElement != null) {
+                                            else if (helperTextElement != null) {
                                                 runOnUiThread(new Runnable() {
                                                     public void run() {
                                                         Toast.makeText(getApplicationContext(), helperTextElement.attr("data-error"), Toast.LENGTH_SHORT).show();
@@ -142,13 +141,13 @@ public class SignUp_Screen extends AppCompatActivity {
                                                 });
                                             }
 
-                                            if (redTextElements.isEmpty() && helperTextElement != null)
+                                            else {
                                                 runOnUiThread(new Runnable() {
                                                     public void run() {
                                                         Toast.makeText(getApplicationContext(), "Đăng ký thành công", Toast.LENGTH_SHORT).show();
                                                     }
                                                 });
-
+                                            }
                                         }
 
                                         public void onFailure(Call call, IOException e) {
@@ -187,7 +186,7 @@ public class SignUp_Screen extends AppCompatActivity {
         return_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SignUp_Screen.this, MainActivity.class);
+                Intent intent = new Intent(SignUp_Screen.this, Login.class);
                 startActivity(intent);
             }
         });

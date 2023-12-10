@@ -45,4 +45,6 @@ dependencies {
     implementation("com.google.code.gson:gson:2.10.1")
     implementation("androidx.navigation:navigation-fragment:2.5.3")
     implementation("androidx.navigation:navigation-ui:2.5.3")
+    implementation("org.osmdroid:osmdroid-android:6.1.17")
+    implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
 }

@@ -1,4 +1,7 @@
 package com.example.loginscreen;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.MenuItem;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.annotation.NonNull;
@@ -8,7 +11,7 @@ import com.google.android.material.navigation.NavigationBarView;
 
 import java.io.*;
 
-public class DashBoard extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
+public class DashBoard extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener, WebSocketCallback {
     NavigationBarView navigationBarView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +21,20 @@ public class DashBoard extends AppCompatActivity implements NavigationBarView.On
         navigationBarView = findViewById(R.id.bottomNavigationView);
         navigationBarView.setOnItemSelectedListener(this);
         navigationBarView.setSelectedItemId(R.id.person);
-        
+
+
+        SharedPreferences sharedPreferences = getSharedPreferences("MySharedPref", MODE_PRIVATE);
+        String username = sharedPreferences.getString("username", null);
+        String password = sharedPreferences.getString("password", null);
+
+        MyWebSocketTask webSocketTask = new MyWebSocketTask(this, username, password);
+        webSocketTask.execute();
+
+        Intent serviceIntent = new Intent(this, WebSocketService.class);
+        startService(serviceIntent);
+
+
+
     }
     FirstFragment firstFragment = new FirstFragment();
     SecondFragment secondFragment = new SecondFragment();
@@ -42,5 +58,30 @@ public class DashBoard extends AppCompatActivity implements NavigationBarView.On
             return true;
         }
         return false;
+    }
+
+    @Override
+    public void onWebSocketTaskComplete() {
+
+    }
+
+    @Override
+    public void onWebSocketConnected() {
+
+    }
+
+    @Override
+    public void onWebSocketMessage(String message) {
+
+    }
+
+    @Override
+    public void onWebSocketClosed() {
+
+    }
+
+    @Override
+    public void onWebSocketError(String errorMessage) {
+
     }
 }

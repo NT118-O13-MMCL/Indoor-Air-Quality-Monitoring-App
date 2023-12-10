@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
         android:allowBackup="true"
@@ -14,6 +16,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LoginScreen"
         tools:targetApi="31">
+
+        <service
+            android:name=".TokenUpdateService"
+            android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service
+            android:name=".WebSocketService"
+            android:permission="android.permission.BIND_JOB_SERVICE"/>
+
         <activity
             android:name=".RainFall"
             android:exported="false" />
@@ -21,7 +31,7 @@
             android:name=".DashBoard"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Login"
             android:exported="false" />
         <activity
             android:name=".SignUp_Screen"

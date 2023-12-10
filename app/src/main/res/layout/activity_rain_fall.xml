@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/graphbg"
-    tools:context=".MainActivity">
+    tools:context=".Login">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/selectAttribute"
@@ -35,7 +35,7 @@
             android:id="@+id/auto_complete_txt2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="none" />
+            android:inputType="none"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -56,15 +56,23 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/show"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/EndDing"
         android:layout_centerInParent="true"
         android:backgroundTint="#000000"
-        app:cornerRadius="100dp"
         android:fontFamily="@font/poppins_semibold"
         android:text="SHOW"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"
+        app:cornerRadius="100dp" />
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/lineChart"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@+id/show"
+        android:layout_margin="10dp" />
 </RelativeLayout>
 
 
