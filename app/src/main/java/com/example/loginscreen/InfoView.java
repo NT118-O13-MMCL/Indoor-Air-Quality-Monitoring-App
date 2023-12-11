@@ -135,6 +135,7 @@ public class InfoView extends Fragment {
 
                 Intent refreshTokenIntent = new Intent(getActivity(), RefreshTokenService.class);
                 getActivity().stopService(refreshTokenIntent);
+                getActivity().finish();
 
             }
         });

@@ -7,6 +7,13 @@
     android:background="@drawable/dashboardbg"
     tools:context=".DashBoard">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="chart_ic" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
@@ -122,7 +129,7 @@
                         android:layout_marginEnd="10dp"
                         android:layout_marginRight="5dp"
                         android:layout_toStartOf="@+id/humiditytxt"
-                        android:src="@drawable/rainy" />
+                        android:src="@drawable/humidity" />
 
                     <TextView
                         android:id="@+id/humidity_tv"
@@ -160,7 +167,7 @@
                         android:layout_marginTop="10dp"
                         android:fontFamily="@font/poppins_semibold"
                         android:text="Temperature"
-                        android:textColor="@color/lightBlue" />
+                        android:textColor="#DC2515" />
 
                     <ImageView
                         android:id="@+id/temperatureimg"
@@ -170,7 +177,7 @@
                         android:layout_marginEnd="10dp"
                         android:layout_marginRight="5dp"
                         android:layout_toStartOf="@+id/temperaturetxt"
-                        android:src="@drawable/rainy" />
+                        android:src="@drawable/hot" />
 
                     <TextView
                         android:id="@+id/temperature_tv"
@@ -281,7 +288,7 @@
                         android:layout_marginEnd="10dp"
                         android:layout_marginRight="5dp"
                         android:layout_toStartOf="@+id/windSpeedtxt"
-                        android:src="@drawable/rainy" />
+                        android:src="@drawable/storm" />
 
                     <TextView
                         android:id="@+id/windSpeed_tv"

@@ -34,7 +34,6 @@ public class DashBoard extends AppCompatActivity implements NavigationBarView.On
 
     }
     Home home = new Home();
-    SecondFragment secondFragment = new SecondFragment();
     MapView mapView = new MapView();
     InfoView infoView = new InfoView();
 
@@ -43,9 +42,6 @@ public class DashBoard extends AppCompatActivity implements NavigationBarView.On
         int itemId = item.getItemId();
         if (itemId == R.id.home) {
             getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, new Home()).commit();
-            return true;
-        } else if (itemId == R.id.settings) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, new SecondFragment()).commit();
             return true;
         } else if (itemId == R.id.graph) {
             getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, new MapView()).commit();
