@@ -18,7 +18,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class HomePage_Screen extends AppCompatActivity {
+public class HomePage extends AppCompatActivity {
 
     private String urlUser = "https://uiot.ixxc.dev/api/master/user/user";
 
@@ -52,7 +52,7 @@ public class HomePage_Screen extends AppCompatActivity {
                 if(response.isSuccessful())
                 {
                     Log.d("UserInfo", response.body().string());
-                    Intent intent = new Intent(HomePage_Screen.this, DashBoard.class);
+                    Intent intent = new Intent(HomePage.this, DashBoard.class);
                     startActivity(intent);
                     finish();
                 }
@@ -68,7 +68,7 @@ public class HomePage_Screen extends AppCompatActivity {
         loginhomepage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomePage_Screen.this, Login.class);
+                Intent intent = new Intent(HomePage.this, Login.class);
                 startActivity(intent);
             }
         });
@@ -76,7 +76,7 @@ public class HomePage_Screen extends AppCompatActivity {
         signuphomepage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomePage_Screen.this, SignUp_Screen.class);
+                Intent intent = new Intent(HomePage.this, SignUp.class);
                 startActivity(intent);
             }
         });

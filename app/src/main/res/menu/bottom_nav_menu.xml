@@ -10,10 +10,10 @@
         android:icon="@drawable/setting_ic"/>
     <item
         android:id="@+id/graph"
-        android:title="Graph"
+        android:title="Map"
         android:icon="@drawable/chart_ic"/>
     <item
         android:id="@+id/person"
-        android:title="Person"
+        android:title="Account"
         android:icon="@drawable/person_ic"/>
 </menu>

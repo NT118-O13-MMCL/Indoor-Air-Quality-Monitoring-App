@@ -27,7 +27,7 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-public class SignUp_Screen extends AppCompatActivity {
+public class SignUp extends AppCompatActivity {
 
     public String extractFeature(String html, String tag, String attribute) {
         Document document = Jsoup.parse(html);
@@ -186,7 +186,7 @@ public class SignUp_Screen extends AppCompatActivity {
         return_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SignUp_Screen.this, Login.class);
+                Intent intent = new Intent(SignUp.this, Login.class);
                 startActivity(intent);
             }
         });
@@ -194,7 +194,7 @@ public class SignUp_Screen extends AppCompatActivity {
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SignUp_Screen.this, HomePage_Screen.class);
+                Intent intent = new Intent(SignUp.this, HomePage.class);
                 startActivity(intent);
             }
         });

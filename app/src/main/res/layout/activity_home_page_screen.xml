@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/dashboardbg"
-    tools:context=".HomePage_Screen">
+    tools:context=".HomePage">
 
     <RelativeLayout
         android:layout_width="match_parent"

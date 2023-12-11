@@ -31,15 +31,5 @@ public class MyCookieJar implements CookieJar {
         cookieStore.clear();
     }
 
-    public void logAllCookies() {
-        for (String host : cookieStore.keySet()) {
-            List<Cookie> cookies = cookieStore.get(host);
-            if (cookies != null) {
-                for (Cookie cookie : cookies) {
-                    Log.d("CookieJar", "Host: " + host + " - Cookie: " + cookie.toString());
-                }
-            }
-        }
-    }
 }
 

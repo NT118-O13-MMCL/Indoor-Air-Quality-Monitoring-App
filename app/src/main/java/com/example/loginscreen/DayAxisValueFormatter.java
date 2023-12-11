@@ -7,11 +7,11 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-public class HourAxisValueFormatter extends ValueFormatter {
+public class DayAxisValueFormatter extends ValueFormatter {
 
     private final List<Long> timestamps;
 
-    public HourAxisValueFormatter(List<Long> timestamps) {
+    public DayAxisValueFormatter(List<Long> timestamps) {
         this.timestamps = timestamps;
     }
 

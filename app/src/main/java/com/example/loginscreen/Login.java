@@ -32,7 +32,7 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.login);
 
         TextView to_signup = findViewById(R.id.to_signup);
         Button btn_back = findViewById(R.id.btn_back);
@@ -124,12 +124,12 @@ public class Login extends AppCompatActivity {
         });
 
         to_signup.setOnClickListener(v -> {
-            Intent intent = new Intent(Login.this, SignUp_Screen.class);
+            Intent intent = new Intent(Login.this, SignUp.class);
             startActivity(intent);
         });
 
         btn_back.setOnClickListener(v -> {
-            Intent intent = new Intent(Login.this, HomePage_Screen.class);
+            Intent intent = new Intent(Login.this, HomePage.class);
             startActivity(intent);
         });
     }

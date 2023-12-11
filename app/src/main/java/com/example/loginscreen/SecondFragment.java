@@ -24,6 +24,6 @@ public class SecondFragment extends Fragment {
                 activity.getSupportActionBar().setTitle("Settings");
             }
         }
-        return inflater.inflate(R.layout.fragment_second, container, false);
+        return inflater.inflate(R.layout.settings, container, false);
     }
 }

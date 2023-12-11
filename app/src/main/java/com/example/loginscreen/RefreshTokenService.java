@@ -21,7 +21,7 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-public class TokenUpdateService extends Service {
+public class RefreshTokenService extends Service {
 
     private static final long INTERVAL = 12 * 60 * 60 * 1000;
 
@@ -89,7 +89,7 @@ public class TokenUpdateService extends Service {
         new android.os.Handler().postDelayed(
                 () -> {
                     // Start the service again
-                    Intent intent = new Intent(this, TokenUpdateService.class);
+                    Intent intent = new Intent(this, RefreshTokenService.class);
                     startService(intent);
                 },
                 INTERVAL

@@ -19,19 +19,18 @@ public class CustomInfoWindow extends InfoWindow {
         String title = marker.getTitle();
         String snippet = marker.getSnippet();
 
-        // Now we look for the TextView in the InfoWindow layout and set its content
-        View view = getView(); // This should be the view we inflated in the constructor
+        View view = getView();
         TextView titleTextView = view.findViewById(R.id.title);
         TextView snippetTextView = view.findViewById(R.id.snippet);
 
         if (titleTextView != null && snippet != null) {
-            titleTextView.setText(title); // Set the title
-            snippetTextView.setText(snippet); // Set the snippet
+            titleTextView.setText(title);
+            snippetTextView.setText(snippet);
         }
     }
 
     @Override
     public void onClose() {
-        // Override if you want to do something when the InfoWindow is being closed
+
     }
 }

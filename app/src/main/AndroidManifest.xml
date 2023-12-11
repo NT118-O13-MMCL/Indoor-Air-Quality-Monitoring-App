@@ -27,14 +27,14 @@
             android:exported="false" />
 
         <service
-            android:name=".TokenUpdateService"
+            android:name=".RefreshTokenService"
             android:permission="android.permission.BIND_JOB_SERVICE" />
         <service
             android:name=".WebSocketService"
             android:permission="android.permission.BIND_JOB_SERVICE" />
 
         <activity
-            android:name=".RainFall"
+            android:name=".MetricChart"
             android:exported="false" />
         <activity
             android:name=".DashBoard"
@@ -43,10 +43,10 @@
             android:name=".Login"
             android:exported="false" />
         <activity
-            android:name=".SignUp_Screen"
+            android:name=".SignUp"
             android:exported="false" />
         <activity
-            android:name=".HomePage_Screen"
+            android:name=".HomePage"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
