@@ -4,6 +4,7 @@ import android.app.Service;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.IBinder;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -12,6 +13,8 @@ import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
 import java.io.IOException;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -23,7 +26,10 @@ import okhttp3.Response;
 
 public class RefreshTokenService extends Service {
 
-    private static final long INTERVAL = 12 * 60 * 60 * 1000;
+
+    private static final int DELAY = 0;
+    private static final int PERIOD = 24 * 60 * 60 * 1000;
+    private Timer timer = new Timer();
 
     private OkHttpClient client;
 
@@ -34,10 +40,21 @@ public class RefreshTokenService extends Service {
                 .cookieJar(new MyCookieJar())
                 .build();
 
-        updateToken();
-        scheduleTokenUpdate();
-
         return START_STICKY;
+    }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+
+        timer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                updateToken();
+                Log.d("testservice", "successfull");
+            }
+        }, DELAY, PERIOD);
+
     }
 
     private void updateToken() {
@@ -45,8 +62,8 @@ public class RefreshTokenService extends Service {
         String urlToken = "https://uiot.ixxc.dev/auth/realms/master/protocol/openid-connect/token";
 
         SharedPreferences sharedPreferences = getSharedPreferences("MySharedPref", MODE_PRIVATE);
-        String saveUsername = sharedPreferences.getString("access_token", null);
-        String savePassword = sharedPreferences.getString("access_token", null);
+        String saveUsername = sharedPreferences.getString("username", null);
+        String savePassword = sharedPreferences.getString("password", null);
 
         RequestBody data = new FormBody.Builder()
                 .add("client_id", "openremote")
@@ -82,18 +99,6 @@ public class RefreshTokenService extends Service {
             }
         });
 
-    }
-
-    private void scheduleTokenUpdate() {
-
-        new android.os.Handler().postDelayed(
-                () -> {
-                    // Start the service again
-                    Intent intent = new Intent(this, RefreshTokenService.class);
-                    startService(intent);
-                },
-                INTERVAL
-        );
     }
 
     @Nullable

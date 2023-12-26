@@ -120,13 +120,8 @@ public class MetricChart extends AppCompatActivity {
                 fetchDataAndDisplayChart();
 
                 lineChart.setMarker(mv);
-
             }
         });
-
-
-
-
     }
 
     private void fetchDataAndDisplayChart() {
